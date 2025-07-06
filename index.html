@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevPulse - Developer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 DevPulse - Developer Dashboard</h1>
+
+    <div class="controls">
+      <input type="text" id="usernameInput" placeholder="Enter GitHub username" />
+      <button onclick="fetchRepos()">Get GitHub Info</button>
+      <button onclick="toggleTheme()">🌓 Toggle Dark Mode</button>
+    </div>
+
+    <div id="history"></div>
+    <div id="profile"></div>
+
+    <div class="sort-bar">
+      <label for="sortSelect">Sort by:</label>
+      <select id="sortSelect" onchange="fetchRepos()">
+        <option value="updated">Last Updated</option>
+        <option value="stars">Stars</option>
+      </select>
+    </div>
+
+    <hr>
+    <div id="output"></div>
+
+    <h2>💡 Latest Java Questions on StackOverflow</h2>
+    <div id="stackoverflow"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
