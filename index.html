@@ -1,38 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DevPulse - Developer Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>🚀 DevPulse - Developer Dashboard</h1>
 
-    <div class="controls">
-      <input type="text" id="usernameInput" placeholder="Enter GitHub username" />
-      <button onclick="fetchRepos()">Get GitHub Info</button>
-      <button onclick="toggleTheme()">🌓 Toggle Dark Mode</button>
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    DevPulse - Modern Developer Dashboard
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="logo">
+      🚀 DevPulse
     </div>
+
+    <div class="nav-links">
+
+      <div class="active">
+        🏠 Dashboard
+      </div>
+
+      <div>
+        🔥 Trending
+      </div>
+
+      <div>
+        📊 Analytics
+      </div>
+
+      <div>
+        ⭐ Favorites
+      </div>
+
+      <div>
+        ⚙ Settings
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTAINER -->
+
+  <div class="container">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div>
+
+        <h1>
+          DevPulse
+        </h1>
+
+        <p class="subtitle">
+          Explore GitHub developers and repositories
+        </p>
+
+      </div>
+
+      <button
+        onclick="toggleTheme()"
+        class="theme-btn"
+      >
+        🌓 Theme
+      </button>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-section">
+
+      <input
+        type="text"
+        id="usernameInput"
+        placeholder="Enter GitHub username"
+      />
+
+      <button onclick="fetchRepos()">
+        Get GitHub Info →
+      </button>
+
+    </div>
+
+    <!-- HISTORY -->
 
     <div id="history"></div>
+
+    <!-- PROFILE -->
+
     <div id="profile"></div>
 
-    <div class="sort-bar">
-      <label for="sortSelect">Sort by:</label>
-      <select id="sortSelect" onchange="fetchRepos()">
-        <option value="updated">Last Updated</option>
-        <option value="stars">Stars</option>
-      </select>
+    <!-- DASHBOARD -->
+
+    <div class="dashboard-layout">
+
+      <!-- LEFT PANEL -->
+
+      <div class="left-panel">
+
+        <!-- SORT -->
+
+        <div class="sort-bar">
+
+          <label for="sortSelect">
+            Sort by:
+          </label>
+
+          <select
+            id="sortSelect"
+            onchange="fetchRepos()"
+          >
+
+            <option value="updated">
+              Last Updated
+            </option>
+
+            <option value="stars">
+              Stars
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- REPOSITORIES -->
+
+        <div id="output"></div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+
+      <div class="right-panel">
+
+        <!-- ANALYTICS -->
+
+        <div
+          class="side-card"
+          id="analyticsSection"
+        >
+
+          <h3>
+            📊 GitHub Analytics
+          </h3>
+
+          <div id="analyticsContent"></div>
+
+        </div>
+
+        <!-- FAVORITES -->
+
+        <div
+          class="side-card"
+          id="favoritesSection"
+        >
+
+          <h3>
+            ⭐ Favorite Repositories
+          </h3>
+
+          <div id="favoritesContent">
+
+            <p>
+              No favorites added yet.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- SETTINGS -->
+
+        <div
+          class="side-card"
+          id="settingsSection"
+        >
+
+          <h3>
+            ⚙ Dashboard Settings
+          </h3>
+
+          <div class="settings-buttons">
+
+            <button onclick="toggleTheme()">
+              Toggle Theme
+            </button>
+
+            <button onclick="clearHistory()">
+              Clear Search History
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- STACKOVERFLOW -->
+
+        <div class="side-card">
+
+          <h3>
+            💡 Latest Java Questions
+          </h3>
+
+          <div id="stackoverflow"></div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <hr>
-    <div id="output"></div>
-
-    <h2>💡 Latest Java Questions on StackOverflow</h2>
-    <div id="stackoverflow"></div>
   </div>
 
   <script src="script.js"></script>
+
 </body>
+
 </html>
